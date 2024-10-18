@@ -64,31 +64,30 @@ export default class Ceramic {
         cliColors.reset,
         e
       );
-<<<<<<< HEAD
     }
 
-    /** Create social models 
+    // Create social models 
+    /*let model;
     try {
-        let model = await this.orbisdb.ceramic.createModel(orbisdbContextModelDefinition);
+        model = await this.orbisdb.ceramic.createModel(orbisdbContextModelDefinition);
         console.log("model:", model); 
     } catch(e) {
         console.log(cliColors.text.red, "Error creating model:", cliColors.reset, e);
-    }*/
+    } */
 
     /** Create Stream */
     await sleep(2000);
-    /*try {
-      let result = await this.orbisdb.insert('kjzl6hvfrbw6c6crcw5tvydjrgtjatrty8dge1u295gm7yo402htt6bp19qw641').value({
+    try {
+     /* let result = await this.orbisdb.insert(model.id).value({
         name: "Node 3",
         description: "I am Node 3, a very good node!",
-        id: "node-3"
-      }).run();      
+        //id: "node-3"
+      })
+      .run();     
+      console.log("created", result) */
     } catch(e) {
       console.log("Error creating stream:", e);
-    } */
-=======
-    }    
->>>>>>> 9566d9954ca801a0ad690418be99e6fb677c0539
+    } 
   }
 }
 
@@ -102,7 +101,7 @@ function cleanNodeUrl(url) {
  * StreamID Mainnet: kjzl6hvfrbw6c6lqihb9i25vyr4hob667w8otxyzw7fohetbaqkjqrgjvll1h4b
  * StreamID Recon: kjzl6hvfrbw6c6lqihb9i25vyr4hob667w8otxyzw7fohetbaqkjqrgjvll1h4b
  * */
-const orbisdbContextModelDefinition = {
+export const orbisdbContextModelDefinition = {
   name: "OrbisDBContext",
   version: "2.0",
   accountRelation: {
